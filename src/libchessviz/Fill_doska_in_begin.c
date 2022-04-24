@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "funcktion.h"
 
-extern char doska[8][8];
+char doska[8][8];
 
 void Fill_doska_in_begin()
 {
