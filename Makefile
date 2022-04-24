@@ -22,6 +22,7 @@ obj/src/libchessviz/Vivod_doski.o:
 	$(CC) -o obj/src/libchessviz/Vivod_doski.o $(CFLAGS) $(INCLUDEPATH) $(LIBSOURCE)Vivod_doski.c
 obj/src/libchessviz/Vzatie.o:
 	$(CC) -o obj/src/libchessviz/Vzatie.o $(CFLAGS) $(INCLUDEPATH) $(LIBSOURCE)Vzatie.c
+test: bin/test
 clean:
 	rm -rf 
 .PHONY: chessviz clean
