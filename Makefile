@@ -1,3 +1,4 @@
+INCLUDEPATHHH=-I thirdparty
 CC=gcc 
 O=-o
 CFLAGS=-Wall -Werror -c
@@ -32,7 +33,13 @@ obj/src/libchessviz/Peshka.o:
 	$(CC) -o obj/src/libchessviz/Peshka.o $(CFLAGS) $(INCLUDEPATH) $(LIBSOURCE)Peshka.c
 obj/src/libchessviz/Slon.o:
 	$(CC) -o obj/src/libchessviz/Slon.o $(CFLAGS) $(INCLUDEPATH) $(LIBSOURCE)Slon.c
-
+test: bin/test 
+bin/test: obj/src/test/main.o obj/src/test/test.o obj/src/libchessviz/libchessviz.a
+	$(CC) -o bin/test obj/src/test/main.o obj/src/test/test.o obj/src/libchessviz/libchessviz.a -lm
+obj/src/test/main.o: 
+	$(CC) -o obj/src/test/main.o $(CFLAGS) $(INCLUDEPATHHH) -lm test/main.c
+obj/src/test/test.o: 
+	$(CC) -o obj/src/test/test.o $(CFLAGS) $(INCLUDEPATHHH) $(INCLUDEPATH) -lm test/test.c
 clean:
 	rm -rf 
 .PHONY: chessviz clean

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <libchessviz/funcktion.h>
 
-extern char doska[8][8];
+char doska[8][8];
 
 int main()
 {

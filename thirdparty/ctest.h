@@ -164,7 +164,7 @@ struct ctest {
 #endif
 
 void CTEST_LOG(const char* fmt, ...) CTEST_IMPL_FORMAT_PRINTF(1, 2);
-void CTEST_ERR(const char* fmt, ...) CTEST_IMPL_FORMAT_PRINTF(1, 2);  // doesn't return
+//void CTEST_ERR(const char* fmt, ...) CTEST_IMPL_FORMAT_PRINTF(1, 2);  // doesn't return
 
 #define CTEST(sname, tname) CTEST_IMPL_CTEST(sname, tname, 0)
 #define CTEST_SKIP(sname, tname) CTEST_IMPL_CTEST(sname, tname, 1)
