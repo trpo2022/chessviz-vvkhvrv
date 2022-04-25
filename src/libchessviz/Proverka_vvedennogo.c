@@ -4,231 +4,173 @@
 
 extern char doska[8][8];
 
-int Proverka_vvedennogo(int kod_sbros)
+int Proverka_vvedennogo(int kod_sbros,char *hodi)
 {   
-	int hod,x_start,x_end,y_start,y_end; 
-	char hod_white[6];
-	char hod_black[6];
-	if (kod_sbros%2!=0)
-		scanf("%s",hod_white);
+	
+	int hod,x_start,x_end,y_start,y_end,deystvie; 
+	if (kod_sbros!=0)
+		if (strlen(hodi)!=5 && strlen(hodi)!=6)
+		{
+			kod_sbros=0;
+			printf("Erorr: Neverno vvedeniye dannie");
+		}	
+			
+	if (kod_sbros!=0 && strlen(hodi)==5)
+	{   
+		if (hodi[0]!='a' && hodi[0]!='b' && hodi[0]!='c' && hodi[0]!='d' && hodi[0]!='e' && hodi[0]!='f' && hodi[0]!='g' && hodi[0]!='h')
+		{
+			kod_sbros=0;
+			printf("Erorr: Neverno vvedeniye dannie");
+		}
+	}
+	if (kod_sbros!=0 && strlen(hodi)==6)
+	{
+		if (hodi[1]!='a' && hodi[1]!='b' && hodi[1]!='c' && hodi[1]!='d' && hodi[1]!='e' && hodi[1]!='f' && hodi[1]!='g' && hodi[1]!='h')
+		{
+			kod_sbros=0;
+			printf("Erorr: Neverno vvedeniye dannie");
+		}
+	}	
+	if (kod_sbros!=0 && strlen(hodi)==5)
+	{   
+		if (hodi[3]!='a' && hodi[3]!='b' && hodi[3]!='c' && hodi[3]!='d' && hodi[3]!='e' && hodi[3]!='f' && hodi[3]!='g' && hodi[3]!='h')
+		{
+			kod_sbros=0;
+			printf("Erorr: Neverno vvedeniye dannie");
+		}		
+	}
+	if (kod_sbros!=0 && strlen(hodi)==6)
+	{   
+		if (hodi[4]!='a' && hodi[4]!='b' && hodi[4]!='c' && hodi[4]!='d' && hodi[4]!='e' && hodi[4]!='f' && hodi[4]!='g' && hodi[4]!='h')
+		{
+			kod_sbros=0;
+			printf("Erorr: Neverno vvedeniye dannie");
+		}		
+	}
+	if (strlen(hodi)==5)	
+	{	
+		y_start=hodi[1]-'0';
+		y_start=(y_start-8)*(-1);
+		y_end=hodi[4]-'0';
+		y_end=(y_end-8)*(-1);
+		if (kod_sbros!=0)
+		{   
+			if (y_start<0 || y_start>7)
+			{
+				kod_sbros=0;
+				printf("Erorr: Neverno vvedeniye dannie");
+			}
+			if (y_end<0 || y_end>7)
+			{
+				printf("Erorr: Neverno vvedeniye dannie");
+			}
+		}
+	}
 	else
-		scanf("%s",hod_black);
-	if (kod_sbros%2!=0)	
-		if (kod_sbros!=0)
-			if (strlen(hod_white)!=5)
-			{
-				kod_sbros=0;
-				printf("^\n");
-				printf("|\n");
-				printf("Erorr: Neverno vvedeniye dannie");
-			}	
-	if (kod_sbros%2==0)	
-		if (kod_sbros!=0)
-			if (strlen(hod_black)!=5)
-			{
-				kod_sbros=0;
-				for (int i=0;i<=strlen(hod_white);i++)
-				{
-					printf(" ");		
-				}
-				printf("^\n");
-				for (int i=0;i<=strlen(hod_white);i++)
-				{
-					printf(" ");		
-				}
-				printf("|\n");
-				for (int i=0;i<=strlen(hod_white);i++)
-				{
-					printf(" ");		
-				}
-				printf("Erorr: Neverno vvedeniye dannie");
-			}
-	if (kod_sbros%2!=0)			
+	{	
+		y_start=hodi[2]-'0';
+		y_start=(y_start-8)*(-1);
+		y_end=hodi[5]-'0';
+		y_end=(y_end-8)*(-1);
 		if (kod_sbros!=0)
 		{   
-			if (hod_white[0]!='a' && hod_white[0]!='b' && hod_white[0]!='c' && hod_white[0]!='d' && hod_white[0]!='e' && hod_white[0]!='f' && hod_white[0]!='g' && hod_white[0]!='h')
+			if (y_start<0 || y_start>7)
 			{
 				kod_sbros=0;
-				printf("^\n");
-				printf("|\n");
 				printf("Erorr: Neverno vvedeniye dannie");
 			}
-		}
-	if (kod_sbros%2==0)
-		if (kod_sbros!=0)
-		{
-			if (hod_black[0]!='a' && hod_black[0]!='b' && hod_black[0]!='c' && hod_black[0]!='d' && hod_black[0]!='e' && hod_black[0]!='f' && hod_black[0]!='g' && hod_black[0]!='h')
+			if (y_end<0 || y_end>7)
 			{
 				kod_sbros=0;
-				for (int i=0;i<=strlen(hod_white);i++)
-				{
-					printf(" ");		
-				}
-				printf("^\n");
-				for (int i=0;i<=strlen(hod_white);i++)
-				{
-					printf(" ");		
-				}
-				printf("|\n");
-				for (int i=0;i<=strlen(hod_white);i++)
-				{
-					printf(" ");		
-				}
-				printf("Erorr: Neverno vvedeniye dannie");
+				printf("Erorr: Neverno vvedeniye dannie\n");
 			}
 		}
-	if (kod_sbros%2!=0)		
+	}
+	if (strlen(hodi)==5)
+	{
 		if (kod_sbros!=0)
 		{   
-			if (hod_white[3]!='a' && hod_white[3]!='b' && hod_white[3]!='c' && hod_white[3]!='d' && hod_white[3]!='e' && hod_white[3]!='f' && hod_white[3]!='g' && hod_white[3]!='h')
+			if (hodi[2]!='-' && hodi[2]!='x')
 			{
 				kod_sbros=0;
-				printf("   ^\n");
-				printf("   |\n");
-				printf("   Erorr: Neverno vvedeniye dannie");
+				printf("Erorr: Neizvestnoe deystvie");
 			}		
 		}
-	if (kod_sbros%2==0)	
-		if (kod_sbros!=0)
-		{   
-			if (hod_black[3]!='a' && hod_black[3]!='b' && hod_black[3]!='c' && hod_black[3]!='d' && hod_black[3]!='e' && hod_black[3]!='f' && hod_black[3]!='g' && hod_black[3]!='h')
-			{
-				kod_sbros=0;
-				for (int i=0;i<=strlen(hod_white);i++)
-				{
-					printf(" ");		
-				}
-				printf("   ^\n");
-				for (int i=0;i<=strlen(hod_white);i++)
-				{
-					printf(" ");		
-				}
-				printf("   |\n");
-				for (int i=0;i<=strlen(hod_white);i++)
-				{
-					printf(" ");		
-				}
-				printf("   Erorr: Neverno vvedeniye dannie");
-			}
-		}
-	if (kod_sbros%2!=0)	
-	{	
-		y_start=hod_white[1]-'0';
-		y_start=(y_start-8)*(-1);
-		y_end=hod_white[4]-'0';
-		y_end=(y_end-8)*(-1);
-		if (kod_sbros!=0)
-		{   
-			if (y_start<1 || y_start>8)
-			{
-				kod_sbros=0;
-				printf(" ^\n");
-				printf(" |\n");
-				printf(" Erorr: Neverno vvedeniye dannie");
-			}
-			if (y_end<1 || y_end>8)
-			{
-				kod_sbros=0;
-				printf("    ^\n");
-				printf("    |\n");
-				printf("    Erorr: Neverno vvedeniye dannie");
-			}
-		}
 	}
-	if (kod_sbros%2==0)
-	{	
-		y_start=hod_black[1]-'0';
-		y_start=(y_start-8)*(-1);
-		y_end=hod_black[4]-'0';
-		y_end=(y_end-8)*(-1);
+	else
+	{
 		if (kod_sbros!=0)
 		{   
-			if (y_start<1 || y_start>8)
+			if (hodi[3]!='-' && hodi[3]!='x')
 			{
 				kod_sbros=0;
-				printf("      ^\n");
-				printf("      |\n");
-				printf("      Erorr: Neverno vvedeniye dannie");
-			}
-			if (y_end<1 || y_end>8)
-			{
-				kod_sbros=0;
-				printf("        ^\n");
-				printf("        |\n");
-				printf("        Erorr: Neverno vvedeniye dannie\n");
-			}
-		}
-	}
-	if (kod_sbros%2!=0)
-		if (kod_sbros!=0)
-		{   
-			if (hod_white[2]!='-' && hod_white[2]!='x')
-			{
-				kod_sbros=0;
-				printf("  ^\n");
-				printf("  |\n");
-				printf("  Erorr: Neizvestnoe deystvie");
+				printf("Erorr: Neizvestnoe deystvie");
 			}		
 		}
-	if (kod_sbros%2==0)	
+	}
+	if (strlen(hodi)==5)
+	{
+		x_start=hodi[0]- '0';
+		x_start=x_start - 49;
+		y_start=hodi[1]-'0';
+		y_start=(y_start-8)*(-1);
+		x_end=hodi[3]- '0';
+		x_end=x_end - 49;
+		y_end=hodi[4]-'0';
+		y_end=(y_end-8)*(-1);
+		hod=kod_sbros%2;
 		if (kod_sbros!=0)
-		{   
-			if (hod_black[2]!='-' && hod_black[2]!='x')
+		{
+			
+			if (hodi[2]=='-')
 			{
-				kod_sbros=0;
-				for (int i=0;i<=strlen(hod_white);i++)
-				{
-					printf(" ");		
-				}
-				printf("  ^\n");
-				for (int i=0;i<=strlen(hod_white);i++)
-				{
-					printf(" ");		
-				}
-				printf("  |\n");
-				for (int i=0;i<=strlen(hod_white);i++)
-				{
-					printf(" ");		
-				}
-				printf("  Erorr: Neizvestnoe deystvie");
+			
+				kod_sbros=Peshka(x_start,x_end,y_start,y_end,hod,kod_sbros,0);
+			}
+			else
+			{
+			
+				kod_sbros=Peshka(x_start,x_end,y_start,y_end,hod,kod_sbros,1);
 			}
 		}
-	if (kod_sbros%2!=0)
-	{
-		x_start=hod_white[0]- '0';
-		x_start=x_start - 49;
-		y_start=hod_white[1]-'0';
-		y_start=(y_start-8)*(-1);
-		x_end=hod_white[3]- '0';
-		x_end=x_end - 49;
-		y_end=hod_white[4]-'0';
-		y_end=(y_end-8)*(-1);
-		hod=0;
-		if (kod_sbros!=0)
-		{
-			if (hod_white[2]=='-')
-				kod_sbros=Dvizenie(x_start,x_end,y_start,y_end,hod,kod_sbros);
-			else
-				kod_sbros=Vzatie(x_start,x_end,y_start,y_end,hod,kod_sbros);	
-		}
 	}
-	if (kod_sbros%2==0)
+	else
 	{
-		x_start=hod_black[0]- '0';
+		x_start=hodi[1]- '0';
 		x_start=x_start - 49;
-		y_start=hod_black[1]-'0';
+		y_start=hodi[2]-'0';
 		y_start=(y_start-8)*(-1);
-		x_end=hod_black[3]- '0';
+		x_end=hodi[4]- '0';
 		x_end=x_end - 49;
-		y_end=hod_black[4]-'0';
+		y_end=hodi[5]-'0';
 		y_end=(y_end-8)*(-1);
-		hod=1;
-		if (kod_sbros!=0)
+		hod=kod_sbros%2;
+		if (hodi[3]=='-')
+		deystvie=0;
+		else
+		deystvie=1;
+		if (kod_sbros!=0)	
 		{
-			if (hod_black[2]=='-')
-				kod_sbros=Dvizenie(x_start,x_end,y_start,y_end,hod,kod_sbros);
-			else
-				kod_sbros=Vzatie(x_start,x_end,y_start,y_end,hod,kod_sbros);
+			if (hodi[0]=='R')
+			{
+				kod_sbros=Ladya(x_start,x_end,y_start,y_end,hod,kod_sbros,deystvie);
+			}
+			if (hodi[0]=='B')
+			{
+				kod_sbros=Slon(x_start,x_end,y_start,y_end,hod,kod_sbros,deystvie);
+			}
+			if (hodi[0]=='N')
+			{
+				kod_sbros=Kon(x_start,x_end,y_start,y_end,hod,kod_sbros,deystvie);
+			}
+			if (hodi[0]=='Q')
+			{
+				kod_sbros=Koroleva(x_start,x_end,y_start,y_end,hod,kod_sbros,deystvie);
+			}
+			if (hodi[0]=='K')
+			{
+				kod_sbros=Korol(x_start,x_end,y_start,y_end,hod,kod_sbros,deystvie);
+			}
 		}
 	}
 	return kod_sbros;
