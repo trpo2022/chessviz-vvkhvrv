@@ -60,7 +60,17 @@ int Slon(int x_start, int x_end, int y_start, int y_end, int hod, int kod_sbros,
 				} 
 		if (vozvrat_kod!=0)
 		{	
-			if (abs((y_end-y_start))!=abs((x_end-x_start)))
+			int odin=y_end-y_start;
+			int dva=x_end-x_start;
+			if (odin<0)
+			{
+				odin=odin*(-1);
+			}
+			if (dva<0)
+			{
+				dva=dva*(-1);
+			}
+			if (odin!=dva)
 			{
 				printf("Erorr: Slon tak ne hodit");
 				vozvrat_kod=0;
@@ -175,7 +185,17 @@ int Slon(int x_start, int x_end, int y_start, int y_end, int hod, int kod_sbros,
 				} 
 		if (vozvrat_kod!=0)
 		{	
-			if (abs((y_end-y_start))!=abs((x_end-x_start)))
+			int odin=y_end-y_start;
+			int dva=x_end-x_start;
+			if (odin<0)
+			{
+				odin=odin*(-1);
+			}
+			if (dva<0)
+			{
+				dva=dva*(-1);
+			}
+			if (odin!=dva)
 			{
 				printf("Erorr: Slon tak ne hodit");
 				vozvrat_kod=0;
