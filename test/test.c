@@ -1,5 +1,5 @@
 #include <ctest.h>
-#include <libchessviz/funcktion.h>
+#include <lib/funcktion.h>
 #include <math.h>
 #include <stdio.h>
 #define size 128
