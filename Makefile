@@ -26,7 +26,7 @@ obj/src/lib/Kon.o:
 obj/src/lib/Korol.o:
 	$(CC) -o obj/src/lib/Korol.o $(CFLAGS) $(INCLUDEPATH) $(LIBSOURCE)Korol.c
 obj/src/lib/Koroleva.o:
-	$(CC) -o obj/src/lib/Koroleva.o $(CFLAGS) $(INCLUDEPATH) $(LIBSOURCE)Koroleva.c
+	$(CC) -o obj/src/lib/Koroleva.o $(CFLAGS) $(INCLUDEPATH) $(LIBSOURCE)Koroleva.c -lm
 obj/src/lib/Ladya.o:
 	$(CC) -o obj/src/lib/Ladya.o $(CFLAGS) $(INCLUDEPATH) $(LIBSOURCE)Ladya.c
 obj/src/lib/Peshka.o:
