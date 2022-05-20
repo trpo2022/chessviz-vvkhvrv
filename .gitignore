@@ -1,0 +1,8 @@
+*.swp
+*.out
+*main
+*.exe
+*.o
+*.a
+*chessviz
+*test
