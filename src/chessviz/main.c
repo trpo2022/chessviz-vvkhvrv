@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <libchessviz/funcktion.h>
+#include <lib/funcktion.h>
 
 char doska[8][8];
 
